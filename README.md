@@ -31,12 +31,12 @@ Following are the pre-requisites tools that you'll need:
 
 ## Frontend Setup
 
-- Navigate to react app by running `cd interface`
+- Navigate to react app by running `cd frontend`
 - Install dependencies using `npm install`
 - Copy the .json files containing the ABI from _./artifacts/contracts_. You'll need to copy the following json files from their respective folders
   - Bitcoin.json
   - CoreLoanPlatform.json
   - IERC20.json
   - USD.json
-  to `interface/src/ABI/` folder.
+  to `frontend/src/ABI/` folder.
 - Run the frontend using `npm  start`.

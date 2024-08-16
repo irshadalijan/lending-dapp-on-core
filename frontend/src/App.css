@@ -1,0 +1,150 @@
+/* App.css */
+
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  padding: 20px;
+  border-bottom: 2px solid #eee;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  color: #333;
+}
+
+header .text-center {
+  margin-top: 20px;
+}
+
+nav {
+  margin: 20px 0;
+  padding: 10px 0;
+  background-color: #333;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Home Page Specific Styles */
+.text-center {
+  text-align: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+h2 {
+  margin: 20px 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+p {
+  font-size: 1em;
+  color: #555;
+}
+
+/* Input Styles */
+.input-group {
+  margin: 20px 0;
+}
+
+.input-group input {
+  padding: 10px;
+  font-size: 1em;
+  width: calc(100% - 120px);
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+.input-group .input-group-append button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.input-group .input-group-append button.btn-success {
+  background-color: #28a745;
+}
+
+.input-group .input-group-append button.btn-warning {
+  background-color: #ffc107;
+}
+
+.input-group .input-group-append button.btn-primary {
+  background-color: #007bff;
+}
+
+.input-group .input-group-append button.btn-secondary {
+  background-color: #6c757d;
+}
+
+/* Additional Styling */
+.my-4 {
+  margin: 40px 0;
+}
+
+.text-info {
+  color: #17a2b8;
+}
