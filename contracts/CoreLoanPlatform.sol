@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract CoreLoanPlatform is Ownable{
+contract CoreLoanPlatform is Ownable {
     using SafeERC20 for IERC20;
     // Interfaces for ERC20 tokens
     IERC20 public immutable USD;
@@ -86,10 +86,6 @@ contract CoreLoanPlatform is Ownable{
         emit CollateralWithdrawn(msg.sender, amount);
     }
 
-    function withdrawBTC(uint256 amount) external {
-        // TODO : Implement Logic for withdrawing BTC
-    }
-
     function getBorrowableAmount(address user) external view returns (uint256) {
         return (userCollateral[user] * BORROWABLE_RATIO) / 100;
     }
@@ -130,8 +126,29 @@ contract CoreLoanPlatform is Ownable{
         emit LoanTaken(msg.sender, amount, requiredCollateral);
     }
 
+    function withdrawBTC(uint256 amount) external {
+        require(amount > 0, "Amount must be greater than 0");
+        require(lenderBalances[msg.sender] >= amount, "Insufficient balance");
+        lenderBalances[msg.sender] -= amount;
+        totalStaked = totalStaked - amount;
+        BTC.safeTransfer(msg.sender, amount);
+        emit BTCWithdrawn(msg.sender, amount);
+    }
+
     function depositBTC(uint256 amount) external {
-        // TODO : Implement Logic for deposting BTC
+        require(amount > 0, "Amount must be greater than 0");
+        BTC.safeTransferFrom(msg.sender, address(this), amount);
+        lenderBalances[msg.sender] += amount;
+        totalStaked = totalStaked + amount;
+        emit BTCDeposited(msg.sender, amount);
+    }
+
+    function getCurrentApy() external pure returns (uint256) {
+        return INTEREST_RATE;
+    }
+
+    function getUserStaked(address user) external view returns (uint256) {
+        return lenderBalances[user];
     }
 
     function repayLoan(address user) external {
@@ -160,15 +177,7 @@ contract CoreLoanPlatform is Ownable{
         // TODO : Implement Logic for fetching total borrowed amount
     }
 
-    function getCurrentApy() external pure returns (uint256) {
-        // TODO : Implement Logic for fetching current APY
-    }
-
     function getUserBorrowed(address user) external view returns (uint256) {
         // TODO : Implement Logic for fetching a User's borrowed amount
-    }
-
-    function getUserStaked(address user) external view returns (uint256) {
-        // TODO : Implement Logic for fetching a User's Staked amount
     }
 }

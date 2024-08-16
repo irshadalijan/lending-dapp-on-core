@@ -117,16 +117,12 @@ const App = () => {
             </Flex>
 
             <HStack as="nav" spacing={8}>
-              <Link
-                as={ChakraLink}
-                to="/borrowing"
-                _hover={{ textDecoration: "none" }}
-              >
+              <Link as={ChakraLink} to="/" _hover={{ textDecoration: "none" }}>
                 <Button variant="ghost">Home</Button>
               </Link>
               <Link
                 as={ChakraLink}
-                to="/borrowing"
+                to="/lending"
                 _hover={{ textDecoration: "none" }}
               >
                 <Button variant="ghost">Lending</Button>
@@ -142,8 +138,8 @@ const App = () => {
 
             <Box width="100%">
               <Routes>
-                <Route path="/" element={<Borrowing />} />
-                <Route path="/lending" element={<Borrowing />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/lending" element={<Lending />} />
                 <Route path="/borrowing" element={<Borrowing />} />
               </Routes>
             </Box>
