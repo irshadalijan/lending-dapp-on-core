@@ -1,5 +1,8 @@
 # Lending dApp on the Core Network
 
+## Live Demo
+  Please click on the link to view the demo: [Lending Dapp Demo](https://lending-dapp.netlify.app/)
+
 ## Pre-requisites
 Following are the pre-requisites tools that you'll need: 
 - [Node.js](https://nodejs.org/) 
