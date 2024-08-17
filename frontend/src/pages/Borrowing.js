@@ -43,7 +43,6 @@ export const Borrowing = () => {
   const [interestAmount, setInterestAmount] = useState(0);
   const toast = useToast();
 
-  const bgColor = useColorModeValue("white", "gray.800");
   const borderColor = useColorModeValue("gray.200", "gray.700");
 
   const fetchUserData = async () => {
@@ -192,7 +191,6 @@ export const Borrowing = () => {
 
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={8}>
           <Stat
-            bg={bgColor}
             borderRadius="lg"
             boxShadow="md"
             p={5}
@@ -205,7 +203,6 @@ export const Borrowing = () => {
           </Stat>
 
           <Stat
-            bg={bgColor}
             borderRadius="lg"
             boxShadow="md"
             p={5}
@@ -218,7 +215,6 @@ export const Borrowing = () => {
           </Stat>
 
           <Stat
-            bg={bgColor}
             borderRadius="lg"
             boxShadow="md"
             p={5}
@@ -232,7 +228,6 @@ export const Borrowing = () => {
         </SimpleGrid>
 
         <Box
-          bg={bgColor}
           borderRadius="lg"
           boxShadow="md"
           p={6}
@@ -269,7 +264,6 @@ export const Borrowing = () => {
         </Box>
 
         <Box
-          bg={bgColor}
           borderRadius="lg"
           boxShadow="md"
           p={6}
@@ -309,7 +303,6 @@ export const Borrowing = () => {
         </Box>
 
         <Box
-          bg={bgColor}
           borderRadius="lg"
           boxShadow="md"
           p={6}

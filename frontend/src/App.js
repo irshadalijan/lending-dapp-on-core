@@ -131,21 +131,21 @@ const App = () => {
 
             <HStack as="nav" spacing={8}>
               <Link as={ChakraLink} to="/" _hover={{ textDecoration: "none" }}>
-                <Button variant="ghost">Home</Button>
+                <Button variant="solid">Home</Button>
               </Link>
               <Link
                 as={ChakraLink}
                 to="/lending"
                 _hover={{ textDecoration: "none" }}
               >
-                <Button variant="ghost">Lending</Button>
+                <Button variant="solid">Lending</Button>
               </Link>
               <Link
                 as={ChakraLink}
                 to="/borrowing"
                 _hover={{ textDecoration: "none" }}
               >
-                <Button variant="ghost">Borrowing</Button>
+                <Button variant="solid">Borrowing</Button>
               </Link>
             </HStack>
 

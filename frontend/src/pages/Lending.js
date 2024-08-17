@@ -28,7 +28,6 @@ export const Lending = () => {
   const [apy, setApy] = useState(0);
   const toast = useToast();
 
-  const bgColor = useColorModeValue('white', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
 
   useEffect(() => {
@@ -101,7 +100,6 @@ export const Lending = () => {
         
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
           <Stat
-            bg={bgColor}
             borderRadius="lg"
             boxShadow="md"
             p={5}
@@ -114,7 +112,6 @@ export const Lending = () => {
           </Stat>
           
           <Stat
-            bg={bgColor}
             borderRadius="lg"
             boxShadow="md"
             p={5}
@@ -128,7 +125,6 @@ export const Lending = () => {
         </SimpleGrid>
 
         <Box
-          bg={bgColor}
           borderRadius="lg"
           boxShadow="md"
           p={6}

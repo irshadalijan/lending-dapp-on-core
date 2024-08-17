@@ -26,7 +26,6 @@ export const Home = () => {
   const [stakedChange, setStakedChange] = useState(0);
   const [borrowedChange, setBorrowedChange] = useState(0);
 
-  const bgColor = useColorModeValue('white', 'gray.800');
   const borderColor = useColorModeValue('gray.200', 'gray.700');
 
   useEffect(() => {
@@ -70,7 +69,6 @@ export const Home = () => {
         
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={8}>
           <Stat
-            bg={bgColor}
             borderRadius="lg"
             boxShadow="md"
             p={5}
@@ -86,7 +84,6 @@ export const Home = () => {
           </Stat>
           
           <Stat
-            bg={bgColor}
             borderRadius="lg"
             boxShadow="md"
             p={5}
