@@ -33,12 +33,16 @@ export const Home = () => {
     if (contract) {
       const fetchTotals = async () => {
         try {
+
           const newTotalStaked = ethers.formatUnits(await contract.getTotalStaked(), 18);
           const newTotalBorrowed = ethers.formatUnits(await contract.getTotalBorrowed(), 18);
-
-          setStakedChange(((newTotalStaked - totalStaked) / totalStaked).toFixed(2) * 100);
-          setBorrowedChange(((newTotalBorrowed - totalBorrowed) / totalBorrowed).toFixed(2) * 100);
-          
+  
+          const stakedDiff = newTotalStaked - totalStaked;
+          const borrowedDiff = newTotalBorrowed - totalBorrowed;
+  
+          setStakedChange(totalStaked !== 0 ? (stakedDiff / totalStaked).toFixed(2) * 100 : 0);
+          setBorrowedChange(totalBorrowed !== 0 ? (borrowedDiff / totalBorrowed).toFixed(2) * 100 : 0);
+  
           setTotalStaked(newTotalStaked);
           setTotalBorrowed(newTotalBorrowed);
 

@@ -78,9 +78,22 @@ const App = () => {
         <Container maxW="container.xl" py={8}>
           <VStack spacing={8}>
             <Flex width="100%" justify="space-between" align="center">
-              <Heading as="h1" size="xl">
-                BTCfi
-              </Heading>
+            <Heading as="h1" size="xl" display="flex" alignItems="center">
+              BTCfi
+              <Text fontSize="sm" color="gray.600" mx={2}>
+                powered by
+              </Text>
+              <ChakraLink
+                href="https://www.metaschool.so"
+                isExternal
+                fontSize="sm"
+                fontWeight="bold"
+                color="#972b86"
+            
+              >
+                MetaSchool
+              </ChakraLink>
+            </Heading>
               <HStack>
                 <Tooltip label="Get test tokens">
                   <IconButton
